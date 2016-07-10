@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">gyro_example</string>
+    <string name="act_main_no_acuracy">Sin Suficiente presición</string>
+</resources>
