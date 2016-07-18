@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private static final float ROTATION_THRESHOLD = 2.0f;
     private static final int ROTATION_WAIT_TIME_MS = 100;
 
-    private long mRotationTime = 0;
+    private float mRotationTime = 0;
 
 
     private static MediaPlayer soundGyro;
@@ -56,7 +56,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     public void onSensorChanged(SensorEvent event) {
 
         if (event.accuracy == SensorManager.SENSOR_STATUS_UNRELIABLE) {
-
             if (event.sensor.getType() == Sensor.TYPE_GYROSCOPE) {
                 gyroX.setText(R.string.act_main_no_acuracy);
                 gyroY.setText(R.string.act_main_no_acuracy);
@@ -75,18 +74,14 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     }
 
     private void detectRotation(SensorEvent event) {
-        long now = System.currentTimeMillis();
+        float now = System.currentTimeMillis();
 
         if ((now - mRotationTime) > ROTATION_WAIT_TIME_MS) {
             mRotationTime = now;
-
-            // Change background color if rate of rotation around any
-            // axis and in any direction exceeds threshold;
-            // otherwise, reset the color
             if (Math.abs(event.values[0]) > ROTATION_THRESHOLD ||
                     Math.abs(event.values[1]) > ROTATION_THRESHOLD ||
                     Math.abs(event.values[2]) > ROTATION_THRESHOLD) {
-                soundGyro.start();
+                        soundGyro.start();
             }
         }
     }

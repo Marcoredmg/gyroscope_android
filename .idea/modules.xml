@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/gyro_example.iml" filepath="$PROJECT_DIR$/gyro_example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gyroscope_android.iml" filepath="$PROJECT_DIR$/gyroscope_android.iml" />
     </modules>
   </component>
 </project>
